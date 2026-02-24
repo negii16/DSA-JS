@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      let arr = ["palak", "nisha", "jiya"];
+      let str = "something";
+      function reverseStr() {
+        let reverse = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          reverse += str[i];
+        }
+        return reverse;
+      }
+  
+        let root = (document.getElementById("root").textContent =
+          `${reverseStr()}`);
+    </script>
+  </body>
+</html>

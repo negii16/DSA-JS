@@ -18,9 +18,9 @@
         return age;
       }
 
-      let root = (document.getElementById("root").textContent = `${incAge()}`);
+      // let root = (document.getElementById("root").textContent = `${incAge()}`);
 
-       // filter Active users
+      // filter Active users
 
       let users = [
         { name: "user1", status: "active" },
@@ -36,11 +36,19 @@
         return user.status === "active";
       });
 
-      document.getElementById("root").textContent = JSON.stringify(
-        actUsers,
-        null,
-        2,
-      );
+      // document.getElementById("root").textContent = JSON.stringify(
+      //   actUsers,
+      //   null,
+      //   2,
+      // );
+
+      // reduce()
+      let numbers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+      let sum = numbers.reduce((acc, curr)=>{
+        return acc + curr;
+      }, 0)
+
+      let root = (document.getElementById("root").textContent = `${sum}`);
     </script>
   </body>
 </html>

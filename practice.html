@@ -44,11 +44,22 @@
 
       // reduce()
       let numbers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
-      let sum = numbers.reduce((acc, curr)=>{
+      let sum = numbers.reduce((acc, curr) => {
         return acc + curr;
-      }, 0)
+      }, 0);
 
-      let root = (document.getElementById("root").textContent = `${sum}`);
+      // let root = (document.getElementById("root").textContent = `${count}`);
+
+      function sayHello() {
+        let user = "Anu";
+        console.log("hie ", user);
+        function greet() {
+          console.log("namaste", user);
+        }
+        return greet();
+      }
+      sayHello();
+      // let root = (document.getElementById("root").textContent = `${count}`);
     </script>
   </body>
 </html>

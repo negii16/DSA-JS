@@ -7,7 +7,8 @@
   </head>
   <body>
     <div id="root"></div>
-
+    <button onclick="startLogin()">login</button>
+    <p id="mssg"></p>
     <script>
       // increase age by 1
 
@@ -65,23 +66,30 @@
       // promises
       function login(password) {
         return new Promise((resolve, reject) => {
-          const userPass = prompt(" ");
-          if (password === userPass) {
-            resolve("login successfull");
-          } else {
-            reject("wrong pass");
-          }
-        });
+          const userPass = "121212";
 
+          setTimeout(() => {
+            if (password === userPass) {
+              resolve("login successfull");
+            } else {
+              reject("wrong password");
+            }
+          }, 3000);
+        });
       }
-      
-      login('121212').then((msg)=>{
-        console.log(msg);
-        
-      }).catch((err)=>{
-        console.log(err);
-        
-      })
+
+      function startLogin() {
+        const Pass = prompt(" ");
+        document.getElementById("mssg").innerText = "checking password...";
+
+        login(Pass)
+          .then((msg) => {
+            document.getElementById("mssg").innerText = msg;
+          })
+          .catch((err) => {
+            document.getElementById("mssg").innerText = err;
+          });
+      }
     </script>
   </body>
 </html>

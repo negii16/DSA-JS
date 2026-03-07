@@ -50,16 +50,38 @@
 
       // let root = (document.getElementById("root").textContent = `${count}`);
 
+      // closure = function with its lexical scope
       function sayHello() {
         let user = "Anu";
         console.log("hie ", user);
         function greet() {
-          console.log("namaste", user);
+          return "hi " + user;
         }
         return greet();
       }
-      sayHello();
-      // let root = (document.getElementById("root").textContent = `${count}`);
+      // let root = (document.getElementById("root").textContent =
+      //   `${sayHello()}`);
+
+      // promises
+      function login(password) {
+        return new Promise((resolve, reject) => {
+          const userPass = prompt(" ");
+          if (password === userPass) {
+            resolve("login successfull");
+          } else {
+            reject("wrong pass");
+          }
+        });
+
+      }
+      
+      login('121212').then((msg)=>{
+        console.log(msg);
+        
+      }).catch((err)=>{
+        console.log(err);
+        
+      })
     </script>
   </body>
 </html>
